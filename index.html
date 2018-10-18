@@ -1053,15 +1053,13 @@
 <li>view:负责视图展示，交互，触发更新</li>
 </ul>
 </li>
-<li>viper：相比于mvvm多出nteractor（交互器）和Router（路由）,如下图<br>   <img src="/2017/07/07/mvc mvvm viper 研究总结-简述/uploads/viper.png" width="400" align="center"><pre><code>![](uploads/viper.png)
-</code></pre><ul>
-<li>View :提供完整的视图，负责视图的组合、布局、更新;向Presenter提供更新视图的接口;将View相关的事件发送给Presenter</li>
-<li>Presenter:接收并处理来自View的事件;向Interactor请求调用业务逻辑;接收并处理来自Interactor的数据回调事件;通知View进行更新操作;通过Router跳转到其他View </li>
-<li>Router:提供View之间的跳转功能，减少了模块间的耦合;初始化VIPER的各个模块</li>
-<li>Interactor:维护主要的业务逻辑功能，向Presenter提供现有的业务用例;维护、获取、更新Entity(model);当有业务相关的事件发生时，处理事件，并通知Presenter;Entity和Model一样的数据模型</li>
+<li>viper：相比于mvvm多出nteractor（交互器）和Router（路由）,如下图<br>   <img src="/2017/07/07/mvc mvvm viper 研究总结-简述/uploads/viper.png" width="400" align="center"></li>
 </ul>
-</li>
-</ul>
+<pre><code>* View :提供完整的视图，负责视图的组合、布局、更新;向Presenter提供更新视图的接口;将View相关的事件发送给Presenter
+* Presenter:接收并处理来自View的事件;向Interactor请求调用业务逻辑;接收并处理来自Interactor的数据回调事件;通知View进行更新操作;通过Router跳转到其他View 
+* Router:提供View之间的跳转功能，减少了模块间的耦合;初始化VIPER的各个模块
+* Interactor:维护主要的业务逻辑功能，向Presenter提供现有的业务用例;维护、获取、更新Entity(model);当有业务相关的事件发生时，处理事件，并通知Presenter;Entity和Model一样的数据模型
+</code></pre><p> <img src="/2017/07/07/mvc mvvm viper 研究总结-简述/uploads/viper.png" alt=""></p>
 
           
         
