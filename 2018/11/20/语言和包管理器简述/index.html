@@ -83,16 +83,17 @@
 <meta name="keywords" content="综合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="语言和包管理器简述">
-<meta property="og:url" content="http://yoursite.com/2017/11/20/语言和包管理器简述/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/11/20/语言和包管理器简述/index.html">
 <meta property="og:site_name" content="anphen的欢乐渔场">
 <meta property="og:description" content="由于安装开发工具，配置开发环境，可能会用到很多命令，我们不仅要会使用，还要明白他们之间的关系 mac上最常用的命令应该该是brew和gem brew:Homebrew，是==Mac OS X上的软件包管理工具，我们能够通过终端方便的使用它来安装管理苹果没有自带的Unix相关工具软件==,被誉为OS X不可或缺的套件管理器。Homebrew是基于Ruby安装的，==Mac默认自带Ruby==安装/u">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/11/20/语言和包管理器简述/python3_alias.png">
-<meta property="og:updated_time" content="2019-03-04T07:30:29.320Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/20/语言和包管理器简述/python3_alias.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/20/语言和包管理器简述/packageControlError.png">
+<meta property="og:updated_time" content="2019-03-05T13:31:56.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="语言和包管理器简述">
 <meta name="twitter:description" content="由于安装开发工具，配置开发环境，可能会用到很多命令，我们不仅要会使用，还要明白他们之间的关系 mac上最常用的命令应该该是brew和gem brew:Homebrew，是==Mac OS X上的软件包管理工具，我们能够通过终端方便的使用它来安装管理苹果没有自带的Unix相关工具软件==,被誉为OS X不可或缺的套件管理器。Homebrew是基于Ruby安装的，==Mac默认自带Ruby==安装/u">
-<meta name="twitter:image" content="http://yoursite.com/2017/11/20/语言和包管理器简述/python3_alias.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/20/语言和包管理器简述/python3_alias.png">
 
 
 
@@ -122,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/20/语言和包管理器简述/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/20/语言和包管理器简述/"/>
 
 
 
@@ -235,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/语言和包管理器简述/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/语言和包管理器简述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="anphen">
@@ -264,8 +265,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T10:43:11+08:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T10:43:11+08:00">
+                2018-11-20
               </time>
             
 
@@ -334,11 +335,14 @@
 <ol>
 <li>到python官网下载页面下载最新的python版本（或者自己需要的版本）到本地 </li>
 <li>下载完成后，打开下载的pkg包按照步骤一路点确定，不需要自己修改任何东西，最后安装完成，安装路径默认为 /Library/Frameworks/Python.framework/Versions/3.7</li>
-<li>安装完成，打开电脑自带终端，如果你的终端运行的shell是bash（默认的），可以直接在终端输入<code>open ~/.bash_profile</code>,没有这个文件可以先创建<code>touch .bash_profile</code>,回车后会自动打开一个文本文件，我们可以直接修改里面的内容.如下图我们只需加上这个alias<code>alias python=&quot;/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.6&quot;</code> <img src="/2017/11/20/语言和包管理器简述/python3_alias.png" alt=""></li>
-<li>修改完成后command+s保存这个文件内容，然后重新打开终端或者继续执行  <code>source ~/.bash_profile</code></li>
+<li>安装完成，打开电脑自带终端，如果你的终端运行的shell是bash（默认的），可以直接在终端输入<code>open ~/.bash_profile</code>,没有这个文件可以先创建<code>touch .bash_profile</code>,回车后会自动打开一个文本文件，我们可以直接修改里面的内容.如下图我们只需加上这个alias<code>alias python=&quot;/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.6&quot;</code>,其实就是在环境变量中配置”python”别名, <img src="/2018/11/20/语言和包管理器简述/python3_alias.png" alt=""></li>
+<li>修改完成后command+s保存这个文件内容，然后重新打开终端或者继续执行  <code>source ~/.bash_profile</code>,该命令是环境变量立即生效</li>
 <li>验证 终端输入python回车，可以看到mac自带python版本已经是我们安装的最新的python版本了</li>
 <li>如果想回到mac自带的python版本，只需要像上面那样打开~/.bash_profile，然后注释掉最后的alias，这样就行了。</li>
 </ol>
+<h1 id="sublime-package-control安装错误解决办法"><a href="#sublime-package-control安装错误解决办法" class="headerlink" title="sublime package control安装错误解决办法"></a><strong>sublime package control安装错误解决办法</strong></h1><p>当提示<code>Package Control
+Unable to download *. Please view the console for more details.</code>,解决方法如下</p>
+<p><img src="/2018/11/20/语言和包管理器简述/packageControlError.png" alt=""><br>在 Package Control -&gt; Settings-User 中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;downloader_precedence&quot;:</span><br><span class="line">&#123;</span><br><span class="line">	&quot;linux&quot;: [ &quot;curl&quot;, &quot;urllib&quot;, &quot;wget&quot; ],</span><br><span class="line">	&quot;osx&quot;: [ &quot;curl&quot;, &quot;urllib&quot; ],</span><br><span class="line">	&quot;windows&quot;: [ &quot;wininet&quot; ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -369,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/31/圆角问题小结/" rel="next" title="圆角问题小结">
-                <i class="fa fa-chevron-left"></i> 圆角问题小结
+              <a href="/2018/02/28/python3-0学习/" rel="next" title="python3.0学习">
+                <i class="fa fa-chevron-left"></i> python3.0学习
               </a>
             
           </div>
@@ -379,8 +383,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/01/一个可滚动可缓存的自定义pageView/" rel="prev" title="一个可滚动可缓存的自定义pageView">
-                一个可滚动可缓存的自定义pageView <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/05/mac环境变量配置/" rel="prev" title="mac环境变量配置">
+                mac环境变量配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -462,7 +466,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -508,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#brew"><span class="nav-number">1.</span> <span class="nav-text">brew</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gems"><span class="nav-number">2.</span> <span class="nav-text">Gems</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm"><span class="nav-number">3.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pip"><span class="nav-number">4.</span> <span class="nav-text">pip</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#brew"><span class="nav-number">1.</span> <span class="nav-text">brew</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gems"><span class="nav-number">2.</span> <span class="nav-text">Gems</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm"><span class="nav-number">3.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pip"><span class="nav-number">4.</span> <span class="nav-text">pip</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime-package-control安装错误解决办法"><span class="nav-number">5.</span> <span class="nav-text">sublime package control安装错误解决办法</span></a></li></ol></div>
             
 
           </div>
