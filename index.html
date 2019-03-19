@@ -232,6 +232,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anphen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="anphen的欢乐渔场">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/06/常用命令/" itemprop="url">常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-06T18:10:06+08:00">
+                2019-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/tree命令笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -833,6 +952,8 @@ export PATH</code>,如果不想重新登录，可使用<code>source .bash_profil
 <h1 id="sublime-package-control安装错误解决办法"><a href="#sublime-package-control安装错误解决办法" class="headerlink" title="sublime package control安装错误解决办法"></a><strong>sublime package control安装错误解决办法</strong></h1><p>当提示<code>Package Control
 Unable to download *. Please view the console for more details.</code>,解决方法如下</p>
 <p><img src="/2018/11/20/语言和包管理器简述/packageControlError.png" alt=""><br>在 Package Control -&gt; Settings-User 中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;downloader_precedence&quot;:</span><br><span class="line">&#123;</span><br><span class="line">	&quot;linux&quot;: [ &quot;curl&quot;, &quot;urllib&quot;, &quot;wget&quot; ],</span><br><span class="line">	&quot;osx&quot;: [ &quot;curl&quot;, &quot;urllib&quot; ],</span><br><span class="line">	&quot;windows&quot;: [ &quot;wininet&quot; ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<h1 id="yum"><a href="#yum" class="headerlink" title="yum"></a><strong>yum</strong></h1><p><code>yum（全称为 Yellow dog Updater, Modified）是一个在Fedora和RedHat以及SUSE中的Shell前端软件包管理器。基於RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">1 安装</span><br><span class="line">yum install 全部安装</span><br><span class="line">yum install package1 安装指定的安装包package1</span><br><span class="line">yum groupinsall group1 安装程序组group1</span><br><span class="line"></span><br><span class="line">2 更新和升级</span><br><span class="line">yum update 全部更新</span><br><span class="line">yum update package1 更新指定程序包package1</span><br><span class="line">yum check-update 检查可更新的程序</span><br><span class="line">yum upgrade package1 升级指定程序包package1</span><br><span class="line">yum groupupdate group1 升级程序组group1</span><br><span class="line"></span><br><span class="line">3 查找和显示</span><br><span class="line">yum info package1 显示安装包信息package1</span><br><span class="line">yum list 显示所有已经安装和可以安装的程序包</span><br><span class="line">yum list package1 显示指定程序包安装情况package1</span><br><span class="line">yum groupinfo group1 显示程序组group1信息yum search string 根据关键字string查找安装包</span><br><span class="line"></span><br><span class="line">4 删除程序</span><br><span class="line">yum remove &amp;#124; erase package1 删除程序包package1</span><br><span class="line">yum groupremove group1 删除程序组group1</span><br><span class="line">yum deplist package1 查看程序package1依赖情况</span><br><span class="line"></span><br><span class="line">5 清除缓存</span><br><span class="line">yum clean packages 清除缓存目录下的软件包</span><br><span class="line">yum clean headers 清除缓存目录下的 headers</span><br><span class="line">yum clean oldheaders 清除缓存目录下旧的 headers</span><br><span class="line">yum clean, yum clean all (= yum clean packages; yum clean oldheaders) 清除缓存目录下的软件包及旧的headers</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1382,126 +1503,6 @@ Unable to download *. Please view the console for more details.</code>,解决方
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/圆角问题小结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="anphen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="anphen的欢乐渔场">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/31/圆角问题小结/" itemprop="url">圆角问题小结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T09:52:05+08:00">
-                2017-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>圆角处理，直接使用view的layer的CornerRadius + masksToBounds,是最简洁的方法，但是会引起离屏渲染，导致性能问题，在列表视图中过多的圆角设置就会导致滑动卡顿</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1556,7 +1557,7 @@ Unable to download *. Please view the console for more details.</code>,解决方
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
